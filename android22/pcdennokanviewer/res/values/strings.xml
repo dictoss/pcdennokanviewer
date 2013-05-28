@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">pcdennokanviewer</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_diary_list">DiaryListActivity</string>
+    <string name="title_activity_diary_detail">DiaryDetailActivity</string>
+    <string name="data_loading">loading&#8230;</string>
+    <string name="menu_list_diary">diary</string>
+    <string name="menu_list_history">site history</string>
+    <string name="menu_list_proverbs">proverbs</string>
+    <string name="title_activity_app_preferences">AppPreferencesActivity</string>
+    <string name="edittext_apiurl_title">API URL</string>
+    <string name="edittext_apiurl_summary">API URL ex) http://192.168.100.10/</string>
+    <string name="edittext_apiuser_title">API User</string>
+    <string name="edittext_apiuser_summary">API User summary</string>
+    <string name="edittext_apipass_title">API password</string>
+    <string name="edittext_apipass_summary">API password summary</string>
+    <string name="edittext_fetchrow_title">fetch list max count</string>
+    <string name="edittext_fetchrow_summary">fetch list max count</string>
+    <string name="title_activity_kakugen_list">KakugenListActivity</string>
+    <string name="title_activity_kakugen_detail">KakugenDetailActivity</string>
+    
+</resources>
