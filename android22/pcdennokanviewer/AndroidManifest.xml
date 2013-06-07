@@ -44,6 +44,14 @@
             android:name="jp.dip.pcdennokan.pcdennokanviewer.KakugenDetailActivity"
             android:label="@string/title_activity_kakugen_detail" >
         </activity>
+        <activity
+            android:name="jp.dip.pcdennokan.pcdennokanviewer.SiteHistoryListActivity"
+            android:label="@string/title_activity_sitehistory_list" >
+        </activity>
+        <activity
+            android:name="jp.dip.pcdennokan.pcdennokanviewer.SiteHistoryDetailActivity"
+            android:label="@string/title_activity_sitehistory_detail" >
+        </activity>
     </application>
 
 </manifest>

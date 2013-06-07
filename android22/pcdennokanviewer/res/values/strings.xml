@@ -21,5 +21,6 @@
     <string name="edittext_fetchrow_summary">fetch list max count</string>
     <string name="title_activity_kakugen_list">KakugenListActivity</string>
     <string name="title_activity_kakugen_detail">KakugenDetailActivity</string>
-    
+    <string name="title_activity_sitehistory_list">SiteHistoryListActivity</string>
+    <string name="title_activity_sitehistory_detail">SiteHistoryDetailActivity</string>
 </resources>

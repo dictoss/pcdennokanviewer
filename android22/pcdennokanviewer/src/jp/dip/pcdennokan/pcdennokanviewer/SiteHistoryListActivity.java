@@ -13,25 +13,25 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class KakugenListActivity extends Activity {
+public class SiteHistoryListActivity extends Activity {
 
 	protected List<String> itemlist = new ArrayList<String>();
-	protected List<DictossKakugen> datalist = null;
-	protected String apiurl_path = "api/rest/kakugen/find/";
+	protected List<DictossSiteHistory> datalist = null;
+	protected String apiurl_path = "api/rest/history/find/";
 	protected String postdata_base = "{\"control\": {\"version\": %d, \"user\": \"%s\", \"pass\": \"%s\"}, \"query\": {\"maxrecord\": %d, \"keyword\": []}}";
-	protected int kakugen_version = 1; 
+	protected int sitehistory_version = 1;
 	protected int liststr_limit = 20;
 	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_kakugen_list);
+		setContentView(R.layout.activity_sitehistory_list);
 
 		SharedPreferences myPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 		
 		String postdata = String.format(this.postdata_base,
-				this.kakugen_version,
+				this.sitehistory_version,
 				myPrefs.getString("edittext_apiuser_key", ""),
 				myPrefs.getString("edittext_apipass_key", ""),
 				Integer.parseInt(myPrefs.getString("edittext_fetchrow_key", "30")));
@@ -45,30 +45,30 @@ public class KakugenListActivity extends Activity {
 			apiurl = apiurl_prefix + "/" +this.apiurl_path;			
 		}
 		
-		new AsyncKakugenHttpJsonTask<DictossKakugenList>(this) {
-			protected void onPostExecute(DictossKakugenList result) {
+		new AsyncSiteHistoryHttpJsonTask<DictossSiteHistoryList>(this) {
+			protected void onPostExecute(DictossSiteHistoryList result) {
 				super.onPostExecute(result);
 
-				KakugenListActivity.this.datalist = result.getResult();
+				SiteHistoryListActivity.this.datalist = result.getResult();
 				
-				for(DictossKakugen d : result.getResult()){
+				for(DictossSiteHistory d : result.getResult()){
 					String s = null;
 					
-					if (KakugenListActivity.this.liststr_limit < d.getContent().length()){
-						s = d.getContent().substring(0, KakugenListActivity.this.liststr_limit);
+					if (SiteHistoryListActivity.this.liststr_limit < d.getContent().length()){
+						s = d.getContent().substring(0, SiteHistoryListActivity.this.liststr_limit);
 					}
 					else{
 						s = d.getContent();
 					}
 					
-					KakugenListActivity.this.itemlist.add(s);
+					SiteHistoryListActivity.this.itemlist.add(s);
 				}
 				
-				ArrayAdapter<String> adapter = new ArrayAdapter<String>(KakugenListActivity.this, android.R.layout.simple_list_item_1);
-				for(String s : KakugenListActivity.this.itemlist){
+				ArrayAdapter<String> adapter = new ArrayAdapter<String>(SiteHistoryListActivity.this, android.R.layout.simple_list_item_1);
+				for(String s : SiteHistoryListActivity.this.itemlist){
 					adapter.add(s);
 				}
-				ListView listview = (ListView)findViewById(R.id.kakugen_listView1);
+				ListView listview = (ListView)findViewById(R.id.sitehistory_listView1);
 				listview.setAdapter(adapter);
 				
 		
@@ -79,8 +79,8 @@ public class KakugenListActivity extends Activity {
 				    @Override
 				    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				        try{		                	
-				        	Intent intent = new Intent(KakugenListActivity.this, KakugenDetailActivity.class);
-				        	intent.putExtra("kakugen", KakugenListActivity.this.datalist.get(position));
+				        	Intent intent = new Intent(SiteHistoryListActivity.this, SiteHistoryDetailActivity.class);
+				        	intent.putExtra("sitehistory", SiteHistoryListActivity.this.datalist.get(position));
 				        	startActivity(intent);
 				        }
 				        catch (Exception e){

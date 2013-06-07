@@ -53,7 +53,8 @@ public class MainActivity extends Activity {
 	                	startActivity(intent);
 	                }
 	                else if(item.equals(getString(R.string.menu_list_history))){
-	                	
+	                	Intent intent = new Intent(MainActivity.this, SiteHistoryListActivity.class);
+	                	startActivity(intent);
 	                }
                 }
                 catch (Exception e){
