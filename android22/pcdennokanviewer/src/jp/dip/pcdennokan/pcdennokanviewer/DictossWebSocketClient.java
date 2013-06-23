@@ -12,6 +12,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Vibrator;
 
 public class DictossWebSocketClient extends WebSocketClient {
 
@@ -82,6 +83,8 @@ public class DictossWebSocketClient extends WebSocketClient {
 					contentIntent);
 			
 			notificationManager.notify(R.string.app_name, notification);
+			Vibrator vib = (Vibrator)this.activity.getSystemService(Context.VIBRATOR_SERVICE);
+			vib.vibrate(3000);
 		}
 		catch(Exception e){
 			String s = e.getMessage();
