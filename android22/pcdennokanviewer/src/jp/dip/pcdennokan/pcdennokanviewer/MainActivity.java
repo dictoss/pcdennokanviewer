@@ -1,11 +1,14 @@
 package jp.dip.pcdennokan.pcdennokanviewer;
 
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,7 +20,9 @@ import android.widget.ListView;
 
 public class MainActivity extends Activity {
 		 
-	List<String> itemlist = new ArrayList<String>();
+	protected List<String> itemlist = new ArrayList<String>();
+	
+	protected DictossWebSocketClient websocketclient = null;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +68,27 @@ public class MainActivity extends Activity {
                 }
             }
         });
+		
+		
+		// create web socket
+		SharedPreferences myPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+		String apiurl = myPrefs.getString("edittext_pushserverurl_key", "ws://0.0.0.0:8888/");
+		if (false == apiurl.endsWith("/")) {
+			apiurl = apiurl + "/";			
+		}
+		
+		String apipass = myPrefs.getString("edittext_pushserverpass_key", "");
+		
+		try{
+			URI uri = new URI(apiurl);
+			this.websocketclient = new DictossWebSocketClient(uri, this);
+			this.websocketclient.setPassword(apipass);
+			this.websocketclient.connect();
+		}
+		catch (Exception e){
+			String s = e.getMessage();
+			System.out.println(s);
+		}
     }
 
 	@Override

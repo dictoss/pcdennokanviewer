@@ -22,4 +22,11 @@
     <string name="title_activity_kakugen_detail">KakugenDetailActivity</string>
     <string name="title_activity_sitehistory_list">SiteHistoryListActivity</string>
     <string name="title_activity_sitehistory_detail">SiteHistoryDetailActivity</string> 
+    <string name="checkbox_pushnotify_title">プッシュ配信</string>
+    <string name="checkbox_pushnotify_summary">プッシュ配信を有効にする</string>
+    <string name="edittext_pushserverurl_title">プッシュ配信サーバのURL</string>
+    <string name="edittext_pushserverurl_summary">プッシュ配信サーバのURLを設定します</string>
+    <string name="edittext_pushserverpass_title">プッシュ配信サーバのパスワード</string>
+    <string name="edittext_pushserverpass_summary">プッシュ配信サーバのパスワード</string>
+    
 </resources>

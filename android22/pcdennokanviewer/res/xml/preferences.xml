@@ -1,9 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
     <EditTextPreference android:summary="@string/edittext_apiurl_summary" android:key="edittext_apiurl_key" android:title="@string/edittext_apiurl_title" android:defaultValue="http://0.0.0.0/"/>
     <EditTextPreference android:summary="@string/edittext_apiuser_summary" android:key="edittext_apiuser_key" android:title="@string/edittext_apiuser_title"/>
     <EditTextPreference android:summary="@string/edittext_apipass_summary" android:key="edittext_apipass_key" android:title="@string/edittext_apipass_title"/>
     <EditTextPreference android:summary="@string/edittext_fetchrow_summary" android:key="edittext_fetchrow_key" android:title="@string/edittext_fetchrow_title" android:defaultValue="30"/>
+    <CheckBoxPreference android:summary="@string/checkbox_pushnotify_summary" android:key="checkbox_pushnotify_key" android:title="@string/checkbox_pushnotify_title"/>
+    <EditTextPreference android:summary="@string/edittext_pushserverurl_summary" android:key="edittext_pushserverurl_key" android:title="@string/edittext_pushserverurl_title"/>
+    <EditTextPreference android:summary="@string/edittext_pushserverpass_summary" android:key="edittext_pushserverpass_key" android:title="@string/edittext_pushserverpass_title"/>
     
 
 </PreferenceScreen>

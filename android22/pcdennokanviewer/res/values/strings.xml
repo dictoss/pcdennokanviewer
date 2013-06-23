@@ -23,4 +23,11 @@
     <string name="title_activity_kakugen_detail">KakugenDetailActivity</string>
     <string name="title_activity_sitehistory_list">SiteHistoryListActivity</string>
     <string name="title_activity_sitehistory_detail">SiteHistoryDetailActivity</string>
+    <string name="checkbox_pushnotify_title">checkbox_pushnotify_title</string>
+    <string name="edittext_pushserverurl_title">edittext_pushserverurl_title</string>
+    <string name="edittext_pushserverurl_summary">edittext_pushserverurl_summary</string>
+    <string name="edittext_pushserverpass_title">edittext_pushserverpass_title</string>
+    <string name="edittext_pushserverpass_summary">edittext_pushserverpass_summary</string>
+    
+    
 </resources>
